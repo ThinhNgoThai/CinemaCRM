@@ -1,0 +1,757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{70BC2905-2BB0-473D-99AC-B4148B37FC92}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CinemaCRM</RootNamespace>
+    <AssemblyName>CinemaCRM</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CheckBoxComboBox">
+      <HintPath>..\Bin_Add\CheckBoxComboBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <HintPath>..\Bin_Add\Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MstHtmlEditor, Version=4.14.8.6, Culture=neutral, PublicKeyToken=8ee81cea60080003, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin_Add\MstHtmlEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="restsharp">
+      <HintPath>..\Bin_Add\restsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail">
+      <HintPath>..\Bin_Add\SendGridMail.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contanst\CrmDBConnect.cs" />
+    <Compile Include="Contanst\Contanst.cs" />
+    <Compile Include="Contanst\EncryptionService.cs" />
+    <Compile Include="Contanst\Public.cs" />
+    <Compile Include="Contanst\SendEmail.cs" />
+    <Compile Include="Contanst\TicketDbConnect.cs" />
+    <Compile Include="dir\frmTimeSellTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmTimeSellTicket.Designer.cs">
+      <DependentUpon>frmTimeSellTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmConfigPointCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmConfigPointCard.Designer.cs">
+      <DependentUpon>frmConfigPointCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmConfigPointReward.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmConfigPointReward.Designer.cs">
+      <DependentUpon>frmConfigPointReward.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmListGift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmListGift.Designer.cs">
+      <DependentUpon>frmListGift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmSelectUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmSelectUsers.Designer.cs">
+      <DependentUpon>frmSelectUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmReports.Designer.cs">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\careCustomer\frmAddCardMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\careCustomer\frmAddCardMember.Designer.cs">
+      <DependentUpon>frmAddCardMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\careCustomer\frmComplainType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\careCustomer\frmComplainType.Designer.cs">
+      <DependentUpon>frmComplainType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\customer\frmAnalyzeAdvance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\customer\frmAnalyzeAdvance.Designer.cs">
+      <DependentUpon>frmAnalyzeAdvance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\customer\frmAnalyzeSimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\customer\frmAnalyzeSimple.Designer.cs">
+      <DependentUpon>frmAnalyzeSimple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\customer\frmSearchCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\customer\frmSearchCustomer.Designer.cs">
+      <DependentUpon>frmSearchCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\marketing\frmCampaignDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\marketing\frmCampaignDetail.Designer.cs">
+      <DependentUpon>frmCampaignDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\marketing\frmCampaignEmailResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\marketing\frmCampaignEmailResult.Designer.cs">
+      <DependentUpon>frmCampaignEmailResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\marketing\frmCampaignList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\marketing\frmCampaignList.Designer.cs">
+      <DependentUpon>frmCampaignList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\marketing\frmCampaignPatern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\marketing\frmCampaignPatern.Designer.cs">
+      <DependentUpon>frmCampaignPatern.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\marketing\frmCampaignSMSResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\marketing\frmCampaignSMSResult.Designer.cs">
+      <DependentUpon>frmCampaignSMSResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmConfigRevenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmConfigRevenue.Designer.cs">
+      <DependentUpon>frmConfigRevenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmConfigTicketsPerBuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmConfigTicketsPerBuy.Designer.cs">
+      <DependentUpon>frmConfigTicketsPerBuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmFrequencyReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmFrequencyReview.Designer.cs">
+      <DependentUpon>frmFrequencyReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmManufacturerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmManufacturerList.Designer.cs">
+      <DependentUpon>frmManufacturerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\fromCustomerType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\fromCustomerType.Designer.cs">
+      <DependentUpon>fromCustomerType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmConfigArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmConfigArea.Designer.cs">
+      <DependentUpon>frmConfigArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmFrequency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmFrequency.Designer.cs">
+      <DependentUpon>frmFrequency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmCategoryFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmCategoryFilm.Designer.cs">
+      <DependentUpon>frmCategoryFilm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmHoliday.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmHoliday.Designer.cs">
+      <DependentUpon>frmHoliday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmJob.Designer.cs">
+      <DependentUpon>frmJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmDemo.Designer.cs">
+      <DependentUpon>frmDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmTimePrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmTimePrice.Designer.cs">
+      <DependentUpon>frmTimePrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sys\ConfigureSMTPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\ConfigureSMTPForm.designer.cs">
+      <DependentUpon>ConfigureSMTPForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sys\ConfigureSMSForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\ConfigureSMSForm.designer.cs">
+      <DependentUpon>ConfigureSMSForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sys\frmActingGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\frmActingGroup.designer.cs">
+      <DependentUpon>frmActingGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sys\frmChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\frmChangePass.designer.cs">
+      <DependentUpon>frmChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sys\frmMangerCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sys\frmMangerCustomer.designer.cs">
+      <DependentUpon>frmMangerCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dir\frmConfigAges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dir\frmConfigAges.Designer.cs">
+      <DependentUpon>frmConfigAges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\careCustomer\frmAddCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\careCustomer\frmAddCard.Designer.cs">
+      <DependentUpon>frmAddCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\careCustomer\frmComments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\careCustomer\frmComments.Designer.cs">
+      <DependentUpon>frmComments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\careCustomer\frmCommentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\careCustomer\frmCommentDetails.Designer.cs">
+      <DependentUpon>frmCommentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\careCustomer\frmComplainDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\careCustomer\frmComplainDetails.Designer.cs">
+      <DependentUpon>frmComplainDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\careCustomer\frmComplainManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\careCustomer\frmComplainManager.Designer.cs">
+      <DependentUpon>frmComplainManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\careCustomer\frmDetailsMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\careCustomer\frmDetailsMember.Designer.cs">
+      <DependentUpon>frmDetailsMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\careCustomer\frmManagerCardClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\careCustomer\frmManagerCardClass.Designer.cs">
+      <DependentUpon>frmManagerCardClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\careCustomer\frmManagerMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\careCustomer\frmManagerMember.Designer.cs">
+      <DependentUpon>frmManagerMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\careCustomer\frmPointBonus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\careCustomer\frmPointBonus.Designer.cs">
+      <DependentUpon>frmPointBonus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\customer\frmDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\customer\frmDetails.Designer.cs">
+      <DependentUpon>frmDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\customer\frmContactCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\customer\frmContactCustomer.Designer.cs">
+      <DependentUpon>frmContactCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\customer\frmManagerCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\customer\frmManagerCustomer.Designer.cs">
+      <DependentUpon>frmManagerCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\frmManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\frmManager.Designer.cs">
+      <DependentUpon>frmManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\marketing\frmExcelKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\marketing\frmExcelKey.Designer.cs">
+      <DependentUpon>frmExcelKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\marketing\frmSelectCampaign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\marketing\frmSelectCampaign.Designer.cs">
+      <DependentUpon>frmSelectCampaign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\marketing\frmManagerTemplateSMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\marketing\frmManagerTemplateSMS.Designer.cs">
+      <DependentUpon>frmManagerTemplateSMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\marketing\frmManagerTemplateEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\marketing\frmManagerTemplateEmail.Designer.cs">
+      <DependentUpon>frmManagerTemplateEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\marketing\frmTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\marketing\frmTemplate.Designer.cs">
+      <DependentUpon>frmTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\survey\frmAnswerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\survey\frmAnswerAdd.Designer.cs">
+      <DependentUpon>frmAnswerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\survey\frmQuestionDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\survey\frmQuestionDetails.Designer.cs">
+      <DependentUpon>frmQuestionDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\survey\frmQuestionGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\survey\frmQuestionGroup.Designer.cs">
+      <DependentUpon>frmQuestionGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\survey\frmQuestionManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\survey\frmQuestionManager.Designer.cs">
+      <DependentUpon>frmQuestionManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\survey\frmQuestionSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\survey\frmQuestionSelect.Designer.cs">
+      <DependentUpon>frmQuestionSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\survey\frmQuestionType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\survey\frmQuestionType.Designer.cs">
+      <DependentUpon>frmQuestionType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\survey\frmSurveyDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\survey\frmSurveyDetails.Designer.cs">
+      <DependentUpon>frmSurveyDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\survey\frmSurveyManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\survey\frmSurveyManager.Designer.cs">
+      <DependentUpon>frmSurveyManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\survey\frmSurveyResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\survey\frmSurveyResult.Designer.cs">
+      <DependentUpon>frmSurveyResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="task\survey\frmSurveyType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task\survey\frmSurveyType.Designer.cs">
+      <DependentUpon>frmSurveyType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\vn.brandsms\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="dir\frmTimeSellTicket.resx">
+      <DependentUpon>frmTimeSellTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmConfigPointCard.resx">
+      <DependentUpon>frmConfigPointCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmConfigPointReward.resx">
+      <DependentUpon>frmConfigPointReward.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmListGift.resx">
+      <DependentUpon>frmListGift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmSelectUsers.resx">
+      <DependentUpon>frmSelectUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmReports.resx">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\careCustomer\frmAddCardMember.resx">
+      <DependentUpon>frmAddCardMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\careCustomer\frmComplainType.resx">
+      <DependentUpon>frmComplainType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\customer\frmAnalyzeAdvance.resx">
+      <DependentUpon>frmAnalyzeAdvance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\customer\frmAnalyzeSimple.resx">
+      <DependentUpon>frmAnalyzeSimple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\customer\frmSearchCustomer.resx">
+      <DependentUpon>frmSearchCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\marketing\frmCampaignDetail.resx">
+      <DependentUpon>frmCampaignDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\marketing\frmCampaignEmailResult.resx">
+      <DependentUpon>frmCampaignEmailResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\marketing\frmCampaignList.resx">
+      <DependentUpon>frmCampaignList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\marketing\frmCampaignPatern.resx">
+      <DependentUpon>frmCampaignPatern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\marketing\frmCampaignSMSResult.resx">
+      <DependentUpon>frmCampaignSMSResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmConfigRevenue.resx">
+      <DependentUpon>frmConfigRevenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmConfigTicketsPerBuy.resx">
+      <DependentUpon>frmConfigTicketsPerBuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmFrequencyReview.resx">
+      <DependentUpon>frmFrequencyReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmManufacturerList.resx">
+      <DependentUpon>frmManufacturerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\fromCustomerType.resx">
+      <DependentUpon>fromCustomerType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmConfigArea.resx">
+      <DependentUpon>frmConfigArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmFrequency.resx">
+      <DependentUpon>frmFrequency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmCategoryFilm.resx">
+      <DependentUpon>frmCategoryFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmHoliday.resx">
+      <DependentUpon>frmHoliday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmJob.resx">
+      <DependentUpon>frmJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmDemo.resx">
+      <DependentUpon>frmDemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmTimePrice.resx">
+      <DependentUpon>frmTimePrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\ConfigureSMTPForm.resx">
+      <DependentUpon>ConfigureSMTPForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\ConfigureSMSForm.resx">
+      <DependentUpon>ConfigureSMSForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\frmActingGroup.resx">
+      <DependentUpon>frmActingGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\frmChangePass.resx">
+      <DependentUpon>frmChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sys\frmMangerCustomer.resx">
+      <DependentUpon>frmMangerCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dir\frmConfigAges.resx">
+      <DependentUpon>frmConfigAges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\careCustomer\frmAddCard.resx">
+      <DependentUpon>frmAddCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\carecustomer\frmComments.resx">
+      <DependentUpon>frmComments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\carecustomer\frmCommentDetails.resx">
+      <DependentUpon>frmCommentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\careCustomer\frmComplainDetails.resx">
+      <DependentUpon>frmComplainDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\careCustomer\frmComplainManager.resx">
+      <DependentUpon>frmComplainManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\carecustomer\frmDetailsMember.resx">
+      <DependentUpon>frmDetailsMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\careCustomer\frmManagerCardClass.resx">
+      <DependentUpon>frmManagerCardClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\carecustomer\frmManagerMember.resx">
+      <DependentUpon>frmManagerMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\careCustomer\frmPointBonus.resx">
+      <DependentUpon>frmPointBonus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\customer\frmDetails.resx">
+      <DependentUpon>frmDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\customer\frmContactCustomer.resx">
+      <DependentUpon>frmContactCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\customer\frmManagerCustomer.resx">
+      <DependentUpon>frmManagerCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\frmManager.resx">
+      <DependentUpon>frmManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\marketing\frmExcelKey.resx">
+      <DependentUpon>frmExcelKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\marketing\frmSelectCampaign.resx">
+      <DependentUpon>frmSelectCampaign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\marketing\frmManagerTemplateSMS.resx">
+      <DependentUpon>frmManagerTemplateSMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\marketing\frmManagerTemplateEmail.resx">
+      <DependentUpon>frmManagerTemplateEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\marketing\frmTemplate.resx">
+      <DependentUpon>frmTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\survey\frmAnswerAdd.resx">
+      <DependentUpon>frmAnswerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\survey\frmQuestionDetails.resx">
+      <DependentUpon>frmQuestionDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\survey\frmQuestionGroup.resx">
+      <DependentUpon>frmQuestionGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\survey\frmQuestionManager.resx">
+      <DependentUpon>frmQuestionManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\survey\frmQuestionSelect.resx">
+      <DependentUpon>frmQuestionSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\survey\frmQuestionType.resx">
+      <DependentUpon>frmQuestionType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\survey\frmSurveyDetails.resx">
+      <DependentUpon>frmSurveyDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\survey\frmSurveyManager.resx">
+      <DependentUpon>frmSurveyManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\survey\frmSurveyResult.resx">
+      <DependentUpon>frmSurveyResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task\survey\frmSurveyType.resx">
+      <DependentUpon>frmSurveyType.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\vn.brandsms\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\vn.brandsms\SentSMS.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
+    <Folder Include="rep\" />
+    <Folder Include="task\film\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Credit_card.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\credit_card_64.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\gift_card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\98v1h5s2z8x5bco.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://brandsms.vn:8329/SentSMS.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\vn.brandsms\</RelPath>
+      <UpdateFromURL>http://brandsms.vn:8329/SentSMS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CinemaCRM_vn_brandsms_SentSMS</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\vn.brandsms\SentSMS.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bg.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="login.png" />
+    <None Include="Resources\background.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CinemaCRM.Core\CinemaCRM.Core.csproj">
+      <Project>{fe8ca384-4bb1-48a3-98b3-e914d6d313ed}</Project>
+      <Name>CinemaCRM.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

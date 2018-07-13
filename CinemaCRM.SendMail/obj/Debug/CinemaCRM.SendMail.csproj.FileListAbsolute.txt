@@ -1,0 +1,8 @@
+D:\CPQG\crm\CinemaCRM\CinemaCRM.SendMail\bin\Debug\CinemaCRM.SendMail.exe.config
+D:\CPQG\crm\CinemaCRM\CinemaCRM.SendMail\bin\Debug\CinemaCRM.SendMail.exe
+D:\CPQG\crm\CinemaCRM\CinemaCRM.SendMail\bin\Debug\CinemaCRM.SendMail.pdb
+D:\CPQG\crm\CinemaCRM\CinemaCRM.SendMail\obj\Debug\CinemaCRM.SendMail.Properties.Resources.resources
+D:\CPQG\crm\CinemaCRM\CinemaCRM.SendMail\obj\Debug\CinemaCRM.SendMail.csproj.GenerateResource.Cache
+D:\CPQG\crm\CinemaCRM\CinemaCRM.SendMail\obj\Debug\CinemaCRM.SendMail.exe
+D:\CPQG\crm\CinemaCRM\CinemaCRM.SendMail\obj\Debug\CinemaCRM.SendMail.pdb
+D:\CPQG\crm\CinemaCRM\CinemaCRM.SendMail\obj\Debug\CinemaCRM.SendMail.csprojResolveAssemblyReference.cache

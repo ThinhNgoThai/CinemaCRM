@@ -1,0 +1,6 @@
+D:\CPQG\crm\CinemaCRM\CinemaCRM.SendSMS\bin\Debug\CinemaCRM.SendSMS.exe.config
+D:\CPQG\crm\CinemaCRM\CinemaCRM.SendSMS\bin\Debug\CinemaCRM.SendSMS.exe
+D:\CPQG\crm\CinemaCRM\CinemaCRM.SendSMS\bin\Debug\CinemaCRM.SendSMS.pdb
+D:\CPQG\crm\CinemaCRM\CinemaCRM.SendSMS\obj\Debug\CinemaCRM.SendSMS.exe
+D:\CPQG\crm\CinemaCRM\CinemaCRM.SendSMS\obj\Debug\CinemaCRM.SendSMS.pdb
+D:\CPQG\crm\CinemaCRM\CinemaCRM.SendSMS\obj\Debug\CinemaCRM.SendSMS.csprojResolveAssemblyReference.cache

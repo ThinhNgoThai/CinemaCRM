@@ -1,0 +1,6 @@
+D:\CPQG\crm\CinemaCRM\CinemaCRM.Core\bin\Debug\CinemaCRM.Core.dll
+D:\CPQG\crm\CinemaCRM\CinemaCRM.Core\bin\Debug\CinemaCRM.Core.pdb
+D:\CPQG\crm\CinemaCRM\CinemaCRM.Core\obj\x86\Debug\CinemaCRM.Core.Properties.Resources.resources
+D:\CPQG\crm\CinemaCRM\CinemaCRM.Core\obj\x86\Debug\CinemaCRM.Core.csproj.GenerateResource.Cache
+D:\CPQG\crm\CinemaCRM\CinemaCRM.Core\obj\x86\Debug\CinemaCRM.Core.dll
+D:\CPQG\crm\CinemaCRM\CinemaCRM.Core\obj\x86\Debug\CinemaCRM.Core.pdb

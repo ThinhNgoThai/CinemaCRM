@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SendSmsQuangCao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msisdn" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="alias" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contentType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="authenticateUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="authenticatePass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendSmsQuangCaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendSmsQuangCaoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSmsChamSocKhachHang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msisdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="alias" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contentType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="authenticateUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="authenticatePass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSmsChamSocKhachHangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendSmsChamSocKhachHangResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendSmsQuangCaoSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSmsQuangCao" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsQuangCaoSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSmsQuangCaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsChamSocKhachHangSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSmsChamSocKhachHang" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsChamSocKhachHangSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSmsChamSocKhachHangResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsQuangCaoHttpGetIn">
+    <wsdl:part name="msisdn" type="s1:StringArray" />
+    <wsdl:part name="alias" type="s:string" />
+    <wsdl:part name="message" type="s:string" />
+    <wsdl:part name="contentType" type="s:string" />
+    <wsdl:part name="authenticateUser" type="s:string" />
+    <wsdl:part name="authenticatePass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsQuangCaoHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsChamSocKhachHangHttpGetIn">
+    <wsdl:part name="msisdn" type="s:string" />
+    <wsdl:part name="alias" type="s:string" />
+    <wsdl:part name="message" type="s:string" />
+    <wsdl:part name="contentType" type="s:string" />
+    <wsdl:part name="authenticateUser" type="s:string" />
+    <wsdl:part name="authenticatePass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsChamSocKhachHangHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:portType name="SentSMSSoap">
+    <wsdl:operation name="SendSmsQuangCao">
+      <wsdl:input message="tns:SendSmsQuangCaoSoapIn" />
+      <wsdl:output message="tns:SendSmsQuangCaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsChamSocKhachHang">
+      <wsdl:input message="tns:SendSmsChamSocKhachHangSoapIn" />
+      <wsdl:output message="tns:SendSmsChamSocKhachHangSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SentSMSHttpGet">
+    <wsdl:operation name="SendSmsQuangCao">
+      <wsdl:input message="tns:SendSmsQuangCaoHttpGetIn" />
+      <wsdl:output message="tns:SendSmsQuangCaoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsChamSocKhachHang">
+      <wsdl:input message="tns:SendSmsChamSocKhachHangHttpGetIn" />
+      <wsdl:output message="tns:SendSmsChamSocKhachHangHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SentSMSSoap" type="tns:SentSMSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSmsQuangCao">
+      <soap:operation soapAction="http://tempuri.org/SendSmsQuangCao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsChamSocKhachHang">
+      <soap:operation soapAction="http://tempuri.org/SendSmsChamSocKhachHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SentSMSSoap12" type="tns:SentSMSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSmsQuangCao">
+      <soap12:operation soapAction="http://tempuri.org/SendSmsQuangCao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsChamSocKhachHang">
+      <soap12:operation soapAction="http://tempuri.org/SendSmsChamSocKhachHang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SentSMSHttpGet" type="tns:SentSMSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SendSmsQuangCao">
+      <http:operation location="/SendSmsQuangCao" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsChamSocKhachHang">
+      <http:operation location="/SendSmsChamSocKhachHang" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SentSMS">
+    <wsdl:port name="SentSMSSoap" binding="tns:SentSMSSoap">
+      <soap:address location="http://brandsms.vn:8329/SentSMS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SentSMSSoap12" binding="tns:SentSMSSoap12">
+      <soap12:address location="http://brandsms.vn:8329/SentSMS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SentSMSHttpGet" binding="tns:SentSMSHttpGet">
+      <http:address location="http://brandsms.vn:8329/SentSMS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
